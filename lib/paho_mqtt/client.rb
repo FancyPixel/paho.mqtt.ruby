@@ -234,7 +234,7 @@ module PahoMqtt
         raise ArgumentError
       end
       id = next_packet_id
-      @publisher.send_publish(topic, payload, retain, qos, id)
+      return @publisher.send_publish(topic, payload, retain, qos, id), id
     end
 
     def subscribe(*topics)
